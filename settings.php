@@ -8,9 +8,9 @@ if (!isset($_SESSION['admin_user'])) {
 }
 
 // DB connection
-$host = "127.0.0.1";
-$dbname = "inventorydb";
-$user = "root";
+$host = "gateway01.us-west-2.prod.aws.tidbcloud.com";
+$dbname = "test";
+$user = "2CmofanFHB8EpD6.root";
 $pass = "";
 $conn = new mysqli($host, $user, $pass, $dbname);
 if ($conn->connect_error) {
