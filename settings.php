@@ -8,10 +8,10 @@ if (!isset($_SESSION['admin_user'])) {
 }
 
 // DB connection
-$host = "sql104.infinityfree.com";
-$dbname = "if0_39555153_admin_login_system";
-$user = "if0_39555153";
-$pass = "misadmin2025";
+$host = "127.0.0.1";
+$dbname = "inventorydb";
+$user = "root";
+$pass = "";
 $conn = new mysqli($host, $user, $pass, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
