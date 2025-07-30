@@ -1,8 +1,8 @@
 <?php
-$servername = "127.0.0.1";
-$username = "root";
+$servername = "gateway01.us-west-2.prod.aws.tidbcloud.com";
+$username = "2CmofanFHB8EpD6.root";
 $password = "";
-$dbname = "inventorydb";
+$dbname = "test";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
