@@ -2,7 +2,7 @@
 session_start();
 
 // Database credentials
-$host = "localhost";
+$host = "127.0.0.1";
 $dbname = "admin_login_system";
 $user = "root";
 $pass = "";
