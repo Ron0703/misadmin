@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>MIS Inventory Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="dashboard.css">
+  <!-- SweetAlert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <style>
+    .active-bookmark {
+      width: 10px;
+      height: 10px;
+      background-color: #007bff;
+      border-radius: 50%;
+      margin: 0 auto 8px;
+    }
+     #table {
+    max-height: 150px;
+    overflow-y: auto;
+    }
+
+    select.form-select {
+      overflow-y: auto;
+    }
+
+    .modal-body {
+      max-height: 400px; /* or any height you prefer */
+      overflow-y: auto;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- Sidebar -->
+  <div class="sidebar d-flex flex-column px-3">
+    <h4 class="text-center mb-4">Menu</h4>
+
+    <form class="d-flex mb-3" onsubmit="return false;">
+      <input class="form-control me-2" type="search" placeholder="Search..." id="searchInput" autocomplete="off">
+      <div id="searchResults" class="list-group position-absolute w-100 z-3 mt-5"></div>
+    </form>
+
+    <button class="btn-add-custom mb-3" data-bs-toggle="modal" data-bs-target="#addModal">
+      <i class="fas fa-plus me-2"></i>Add Item
+    </button>
+
+    <a href="settings.php"><i class="fas fa-cog me-2"></i> Settings</a>
+    <a href="logout.php"><i class="fas fa-sign-out-alt me-2"></i> Logout</a>
+  </div>
+
+  <!-- Main Content -->
+  <div class="main-content">
+      <a href="hm.html" class="btn-home">
+        <i class="fas fa-arrow-left me-2"></i> Back
+      </a>
+    <h1 class="mb-5 text-center fw-bold">
+      <span id="refresh-title" style="cursor: pointer;">MIS INVENTORY</span>
+    </h1>
+
+    <div class="row g-4">
+      <!-- Desktop -->
+      <div class="col-6 col-md-3 d-flex justify-content-center">
+        <div class="card card-button text-center p-3" onclick="location.href='desktop.php'">
+          <div class="bookmarkd"></div>
+          <i class="fas fa-desktop fa-2x mb-2"></i>
+          <h5 class="card-title">Desktop</h5>
+        </div>
+      </div>
+
+      <!-- Printer -->
+      <div class="col-6 col-md-3 d-flex justify-content-center">
+        <div class="card card-button text-center p-3" onclick="location.href='printer.php'">
+          <div class="bookmarkp"></div>
+          <i class="fas fa-print fa-2x mb-2"></i>
+          <h5 class="card-title">Printer</h5>
+        </div>
+      </div>
+
+      <!-- Telephone/PIBX -->
+      <div class="col-6 col-md-3 d-flex justify-content-center">
+        <div class="card card-button text-center p-3" onclick="location.href='telephone.php'">
+          <div class="bookmarkt"></div>
+          <i class="fas fa-phone fa-2x mb-2"></i>
+          <h5 class="card-title">Telephone/PIBX</h5>
+        </div>
+      </div>
+
+      <!-- Laptop -->
+      <div class="col-6 col-md-3 d-flex justify-content-center">
+        <div class="card card-button text-center p-3" onclick="location.href='laptop.php'">
+          <div class="bookmarkl"></div>
+          <i class="fas fa-laptop fa-2x mb-2"></i>
+          <h5 class="card-title">Laptop</h5>
+        </div>
+      </div>
+
+      <!-- CCTV -->
+      <div class="col-6 col-md-3 d-flex justify-content-center">
+        <div class="card card-button text-center p-3" onclick="location.href='cctv.php'">
+          <div class="bookmarkc"></div>
+          <i class="fas fa-video fa-2x mb-2"></i>
+          <h5 class="card-title">CCTV</h5>
+        </div>
+      </div>
+
+      <!-- DVR -->
+      <div class="col-6 col-md-3 d-flex justify-content-center">
+        <div class="card card-button text-center p-3" onclick="location.href='dvr.php'">
+          <div class="bookmarkdv"></div>
+          <i class="fas fa-server fa-2x mb-2"></i>
+          <h5 class="card-title">DVR</h5>
+        </div>
+      </div>
+
+      <!-- Server -->
+      <div class="col-6 col-md-3 d-flex justify-content-center">
+        <div class="card card-button text-center p-3" onclick="location.href='server.php'">
+          <div class="bookmarksv"></div>
+          <i class="fas fa-network-wired fa-2x mb-2"></i>
+          <h5 class="card-title">Server</h5>
+        </div>
+      </div>
+
+      <!-- Software -->
+      <div class="col-6 col-md-3 d-flex justify-content-center">
+        <div class="card card-button text-center p-3" onclick="location.href='software.php'">
+          <div class="bookmarksf"></div>
+          <i class="fas fa-cogs fa-2x mb-2"></i>
+          <h5 class="card-title">Software</h5>
+        </div>
+      </div>
+
+      <!-- Managed Switch -->
+      <div class="col-6 col-md-3 d-flex justify-content-center">
+        <div class="card card-button text-center p-3" onclick="location.href='manageswitch.php'">
+          <div class="bookmarkms"></div>
+          <i class="fas fa-exchange-alt fa-2x mb-2"></i>
+          <h5 class="card-title">Manage Switch</h5>
+        </div>
+      </div>
+
+      <!-- Total Items -->
+      <div class="col-6 col-md-3 d-flex justify-content-center">
+        <div class="card card-button text-center p-3" onclick="location.href='total_items.php'">
+          <i class="fas fa-boxes fa-2x mb-2"></i>
+          <h5 class="card-title">Total Items</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Item Modal -->
+  <div class="modal fade" id="addModal" tabindex="-1" aria-labelledby="addModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <form action="add_item.php" method="POST" id="addForm">
+          <div class="modal-header">
+            <h5 class="modal-title text-center w-100" id="addModalLabel">Add Inventory Item</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="table" class="form-label">Select Table</label>
+              <select name="table" id="table" class="form-select" required>
+                <option value="" disabled selected hidden>Choose Here...</option>
+                <option value="desktop">Desktop</option>
+                <option value="printer">Printer</option>
+                <option value="telephone">Telephone/PIBX</option>
+                <option value="laptop">Laptop</option>
+                <option value="cctv">CCTV</option>
+                <option value="dvr">DVR</option>
+                <option value="server">Server</option>
+                <option value="manageswitch">Management Switch</option>
+                <option value="software">Software</option>
+              </select>
+            </div>
+
+            <!-- Common Fields -->
+            <div id="common-fields">
+              <div class="mb-3">
+                <label for="assetcode" class="form-label">Asset Code</label>
+                <input type="text" name="assetcode" id="assetcode" class="form-control" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="accountable_person" class="form-label">Accountable Person</label>
+                <input type="text" name="accountable_person" id="accountable_person" class="form-control" required>
+              </div>
+
+              <div class="mb-3">
+                <label for="device_name" class="form-label">Device Name</label>
+                <input type="text" name="device_name" id="device_name" class="form-control">
+              </div>
+
+              <div class="mb-3">
+                <label for="model" class="form-label">Model</label>
+                <input type="text" name="model" id="model" class="form-control">
+              </div>
+
+              <div class="mb-3">
+                <label for="line_type" class="form-label">Line Type</label>
+                <input type="text" name="line_type" id="line_type" class="form-control">
+              </div>
+
+              <div class="mb-3">
+                <label for="loc" class="form-label">Location</label>
+                <input type="text" name="loc" id="loc" class="form-control">
+              </div>
+
+              <div class="mb-3">
+                <label for="stat" class="form-label">Status</label>
+                <input type="text" name="stat" id="stat" class="form-control">
+              </div>
+            </div>
+
+            <!-- Telephone-specific fields -->
+            <div id="telephone-fields" style="display: none;">
+              <div class="mb-3">
+                <label for="device_type" class="form-label">Device Type</label>
+                <select name="device_type" id="device_type" class="form-select">
+                  <option value="" disabled selected hidden>Select Type</option>
+                  <option value="Telephone">Telephone</option>
+                  <option value="PBX">PBX</option>
+                </select>
+              </div>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="submit" class="btn btn-primary">Add Item</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

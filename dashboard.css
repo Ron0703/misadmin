@@ -1,0 +1,314 @@
+ body {
+      background-color: #f8f9fa;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;	
+    }
+.modal-body {
+  max-height: 400px; /* or any height you prefer */
+  overflow-y: auto;
+}
+
+.sidebar {
+      background-color:  #383c44;
+      color: #ecf0f1;
+      width: 250px;
+      height: 100vh;
+      position: fixed;
+      padding-top: 30px;
+      box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+      z-index: 1000;
+    }
+
+.sidebar h4 {
+      color: #ffffff;
+      font-weight: bold;
+    }
+
+.sidebar a {
+      color: #ecf0f1;
+      text-decoration: none;
+      padding: 10px 20px;
+      display: block;
+      transition: background-color 0.2s ease-in-out;
+      border-radius: 4px;
+    }
+.sidebar a:hover {
+      background-color:#fdfdfd;
+      color: #383c44;
+    }
+
+.sidebar .btn-add-custom {
+      background-color: #27ae60;
+      color: white;
+      font-weight: bold;
+      border: none;
+      padding: 10px 16px;
+      border-radius: 5px;
+      transition: background-color 0.3s;
+      display: block;
+      width: 100%;
+    }
+
+.sidebar .btn-add-custom:hover {
+      background-color: #2ecc71;
+    }
+
+    /* Search dropdown in sidebar */
+form.d-flex {
+      position: relative;
+    }
+
+#searchResults {
+      max-height: 300px;
+      overflow-y: auto;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    /* Main content */
+.main-content {
+      margin-left: 260px;
+      padding: 30px;
+    }
+
+    /* Responsive */
+ @media (max-width: 768px) {
+.sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+      }
+
+.main-content {
+        margin-left: 0;
+      }
+    }
+.card-button {
+      box-sizing: border-box;
+      width: 190px;
+      height: 190px;
+      background: rgba(217, 217, 217, 0.58);
+      border: 1px solid white;
+      box-shadow: 12px 17px 51px rgba(0, 0, 0, 0.22);
+      backdrop-filter: blur(6px);
+      border-radius: 17px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.5s;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      user-select: none;
+      font-weight: bolder;
+      color: black;
+      overflow: hidden;
+    }
+.card:hover {
+      border: 1px solid black;
+      transform: scale(1.05);
+    }
+
+
+.bookmarkd {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #007bff;
+      color: white;
+      padding: 4px 8px;
+      font-size: 12px;
+      border-radius: 8px;
+      z-index: 2;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+.bookmarkp {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #ae00ff;
+      color: white;
+      padding: 4px 8px;
+      font-size: 12px;
+      border-radius: 8px;
+      z-index: 2;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+.bookmarkt {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #ff00bf;
+      color: white;
+      padding: 4px 8px;
+      font-size: 12px;
+      border-radius: 8px;
+      z-index: 2;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+.bookmarkl {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #2a9c08;
+      color: white;
+      padding: 4px 8px;
+      font-size: 12px;
+      border-radius: 8px;
+      z-index: 2;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }  
+
+.bookmarkc {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #585858;
+      color: white;
+      padding: 4px 8px;
+      font-size: 12px;
+      border-radius: 8px;
+      z-index: 2;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+.bookmarkdv {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #ff0000;
+      color: white;
+      padding: 4px 8px;
+      font-size: 12px;
+      border-radius: 8px;
+      z-index: 2;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+.bookmarksv {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #ffd000;
+      color: white;
+      padding: 4px 8px;
+      font-size: 12px;
+      border-radius: 8px;
+      z-index: 2;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+.bookmarksf {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #bbff8e;
+      color: white;
+      padding: 4px 8px;
+      font-size: 12px;
+      border-radius: 8px;
+      z-index: 2;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+.bookmarkms {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background-color: #ffa600;
+      color: white;
+      padding: 4px 8px;
+      font-size: 12px;
+      border-radius: 8px;
+      z-index: 2;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+    }
+
+.btn-home {
+      background-color: #383c44;  
+      color: #ffffff;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.3s ease;
+    }
+
+.btn-home:hover {
+      background-color: rgba(0, 0, 0, 0.58);      
+      color: #fff;
+      text-decoration: none;
+      transform: scale(1.03);
+    }
+
+.btn-home i {
+      margin-right: 6px;
+    }
+
+.custom-table {
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 0 12px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+    }
+
+.custom-table th {
+      background-color: #383c44;
+      color: #fff;
+      text-align: center;
+      vertical-align: middle;
+    }
+
+.custom-table td {
+      vertical-align: middle;
+    }
+
+.custom-table tbody tr:hover {
+      background-color: #f1f1f1;
+      transition: background-color 0.3s ease;
+    }
+
+.table-responsive {
+      margin-top: 20px;
+      border-radius: 10px;
+    }
+.custom-scroll {
+      max-height: 400px;
+      overflow-y: auto;
+      overflow-x: auto;
+      white-space: nowrap;
+    }
+  
+#searchResults .list-group-item {
+      background-color: #ffffff;
+      color: #000000;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+    }
+
+#searchResults .list-group-item:hover {
+      background-color: #000000;
+      color: #ffffff;
+    }
+    
+.scrollable-table {
+      max-height: 400px;
+      overflow-y: auto;
+      border: 1px solid #dee2e6;
+      border-radius: 5px;
+    }
+
+.scrollable-table thead th {
+      position: sticky;
+      top: 0;
+      background-color: #e2e3e5;
+      z-index: 1;
+    }
+
+
