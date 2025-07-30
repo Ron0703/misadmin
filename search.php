@@ -1,9 +1,9 @@
 <?php
 header('Content-Type: application/json');
-$host = "127.0.0.1";
-$user = "root";
+$host = "gateway01.us-west-2.prod.aws.tidbcloud.com";
+$user = "2CmofanFHB8EpD6.root";
 $password = "";
-$dbname = "inventorydb";
+$dbname = "test";
 
 $conn = new mysqli($host, $user, $password, $dbname);
 
