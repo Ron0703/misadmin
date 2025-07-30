@@ -2,9 +2,9 @@
 session_start();
 
 // Database credentials
-$host = "127.0.0.1";
-$dbname = "admin_login_system";
-$user = "root";
+$host = "gateway01.ap-southeast-1.prod.aws.tidbcloud.com";
+$dbname = "test";
+$user = "vLHQYwn7FpSQDJv.root";
 $pass = "";
 
 // Connect to MySQL
